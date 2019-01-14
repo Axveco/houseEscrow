@@ -1,0 +1,4 @@
+build
+nod__modules
+package-lock.json
+.env
