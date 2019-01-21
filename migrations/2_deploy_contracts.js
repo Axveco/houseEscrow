@@ -1,11 +1,9 @@
 var HouseEscrow = artifacts.require("./houseEscrow.sol");
 
-var worthInWei = 10000 ;// TODO: fill in the worthInWei here
+var worthInWei = 10000
 var objectDescription = "0xabc";// TODO: fill in the keccak256 hash of the objectDescription here
 
 
 module.exports = function deployer(deployer, network, accounts) {
-  let buyer = accounts[1];
-  console.log(buyer)
-  deployer.deploy(HouseEscrow, accounts[1], worthInWei, objectDescription)
+  // Use Javascript here to deploy the HouseEscrow
 }

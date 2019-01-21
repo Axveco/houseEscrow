@@ -6,28 +6,21 @@ import {
 
 import contract_artifacts from '../../build/contracts/houseEscrow.json';
 
+console.log(contract_artifacts)
+
 window.App = {
   Backend: {
 
-    accept: function() {
-      let notary = $("#notary").val()
-      let mortgagor = $("#mortgagor").val()
-      console.log(notary, mortgagor, App.CurrentAccount[0])
-      //TODO: check on correct addresses given
-      App.Contract.methods.accept(notary, mortgagor).send({from: App.CurrentAccount[0]})
-
-    },
-
     enumerateStatus: {
-      0: "Concept",
-      1: "Respite",
-      2: "Finished",
-      3: "Dispute",
-      4: "Cancelled"
+      0: "Respite",
+      1: "Finished",
+      2: "Dispute",
+      3: "Cancelled"
     },
 
     translateStatusToDescription: function(status) {
       return App.Backend.enumerateStatus[status]
+
     },
 
     getAccountZero: async function() {
@@ -109,13 +102,6 @@ window.App = {
   },
 
   Interface: {
-
-    formSubmitted: function(type) {
-      if(type == "accept") {
-        App.Backend.accept()
-      }
-    },
-
     setContractAddress: function(contractAddress) {
       $("#contractAddress").html(contractAddress)
     },
@@ -132,7 +118,6 @@ window.App = {
       $("#myRole").html(role)
     }
   }
-
 }
 
 $(function() {

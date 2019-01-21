@@ -1,1 +1,1 @@
-# houseEscrow
+# House escrow DAPP
